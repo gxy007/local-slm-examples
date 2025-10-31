@@ -10,6 +10,7 @@ source .venv/bin/activate
 
 Windows (PowerShell):
 ```powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 ```
@@ -32,9 +33,9 @@ python flask_server.py
 
 Send a request:
 ```bash
-curl -X POST http://localhost:8000/generate \
-  -H 'Content-Type: application/json' \
-  -d '{"prompt": "Say hello in one sentence."}'
+curl.exe -X POST http://localhost:8000/generate `
+  -H 'Content-Type: application/json' `
+  -d '{\"prompt\": \"Say hello in one sentence.\"}'
 ```
 
 Send a request with a system prompt:
